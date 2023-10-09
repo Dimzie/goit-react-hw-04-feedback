@@ -5,7 +5,7 @@ const Buttons = ({ keys, onClickBtn }) => {
     <ButtonsFeedbackWrapper>
       {keys.map(key => (
         <ButtonFeedback key={key} type="button" onClick={() => onClickBtn(key)}>
-          {key}
+          {key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}
         </ButtonFeedback>
       ))}
     </ButtonsFeedbackWrapper>
