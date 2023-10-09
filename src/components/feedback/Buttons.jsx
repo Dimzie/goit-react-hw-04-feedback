@@ -1,13 +1,15 @@
-import { ButtonFeedback, ButtonsFeedbackWrapper } from "./Feedback.styled"
+import { ButtonFeedback, ButtonsFeedbackWrapper } from './Feedback.styled';
 
-const Buttons = ({goodIncrement, neutralIncrement, badIncrement, incrementStatus}) => {
+const Buttons = ({ keys, onClickBtn }) => {
   return (
     <ButtonsFeedbackWrapper>
-          <ButtonFeedback type="button" onClick={() => incrementStatus("good")}>Good</ButtonFeedback>
-          <ButtonFeedback type="button" onClick={() => incrementStatus("neutral")}>Neutral</ButtonFeedback>
-          <ButtonFeedback type="button" onClick={() => incrementStatus("bad")}>Bad</ButtonFeedback>
+      {keys.map(key => (
+        <ButtonFeedback key={key} type="button" onClick={() => onClickBtn(key)}>
+          {key}
+        </ButtonFeedback>
+      ))}
     </ButtonsFeedbackWrapper>
-  )
-}
+  );
+};
 
-export default Buttons
+export default Buttons;

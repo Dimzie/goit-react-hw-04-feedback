@@ -1,6 +1,6 @@
 import { PFeedback } from './Feedback.styled';
 
-const FeedbackItems = ({ good, neutral, bad, total, positivePercentage }) => {
+const FeedbackItems = ({ good, neutral, bad, total, posPercent }) => {
   return (
     <>
       <PFeedback>Good: {good}</PFeedback>
@@ -10,7 +10,7 @@ const FeedbackItems = ({ good, neutral, bad, total, positivePercentage }) => {
       {total === 0 ? (
         <PFeedback>No feedbacks</PFeedback>
       ) : (
-        <PFeedback>Positive feedbacks: {positivePercentage} %</PFeedback>
+        <PFeedback>Positive feedbacks: {posPercent()} %</PFeedback>
       )}
     </>
   );
